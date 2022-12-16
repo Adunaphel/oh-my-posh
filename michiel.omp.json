@@ -7,7 +7,7 @@
           {
             "background": "#6c71c4",
             "foreground": "#eee8d5",
-            "leading_diamond": "\ue0b6",
+            "leading_diamond": "\ue0c2",
             "style": "diamond",
             "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
             "type": "os"
@@ -17,13 +17,13 @@
             "foreground": "#eee8d5",
             "style": "diamond",
             "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }} ",
-            "powerline_symbol": "\ue0b0",
+            "powerline_symbol": "\ue0cc",
             "type": "session"
           },
           {
             "background": "#d33682",
             "foreground": "#eee8d5",
-            "powerline_symbol": "\ue0b0",
+            "powerline_symbol": "\ue0cc",
             "properties": {
               "style": "full"
             },
@@ -40,7 +40,7 @@
               "{{ if gt .Behind 0 }}#B388FF{{ end }}"
             ],
             "foreground": "#073642",
-            "powerline_symbol": "\ue0b0",
+            "powerline_symbol": "\ue0cc",
             "properties": {
               "fetch_stash_count": true,
               "fetch_status": true,
@@ -53,10 +53,10 @@
           {
             "background": "#268bd2",
             "foreground": "#eee8d5",
-            "powerline_symbol": "\ue0b0",
+            "powerline_symbol": "\ue0cc",
             "style": "diamond",
-            "template": " \uf489 {{ .Name }}",
-            "trailing_diamond": "\ue0b4",
+            "template": " {{ if eq .Name \"pwsh\" }}\uebc7{{ end }}{{ if ne .Name \"pwsh\" }}\uf489{{ end }} {{ .Name }}{{ if eq .Name \"pwsh\" }} {{ .Version }}{{ end }} ",
+            "trailing_diamond": "\ue0c0",
             "type": "shell"
           }
         ],
@@ -69,9 +69,9 @@
           {
             "background": "#9ec3f0",
             "foreground": "#000000",
-            "leading_diamond": "\ue0b6",
+            "leading_diamond": "\ue0c2",
             "style": "diamond",
-            "trailing_diamond": "\ue0b4",
+            "trailing_diamond": "\ue0c0",
             "template": "\ufd03 Subscription {{ .Name }} ({{ if .EnvironmentName | contains \"AzureCloud\" }}{{ \"Global\" }}{{ else }}{{ .EnvironmentName }}{{ end }}) ",
             "type": "az"
           }
@@ -85,13 +85,23 @@
           {
             "foreground": "#cb4b16",
             "style": "plain",
-            "template": " ~ ",
+            "template": "\uf1d0 >",
             "type": "text"
           }
         ],
         "type": "prompt"
       }
     ],
+    "secondary_prompt": {
+        "background": "transparent",
+        "foreground": "#cb4b16",
+        "template": "  > "
+    },
+    "transient_prompt": {
+        "background": "transparent",
+        "foreground": "#cb4b16",
+        "template": "{{ .Shell }}> "
+    },
     "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
     "final_space": true,
     "version": 2
