@@ -92,7 +92,7 @@
         "type": "prompt"
       }
     ],
-    "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+    "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
     "final_space": true,
     "version": 2
   }
