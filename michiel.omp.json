@@ -55,7 +55,7 @@
             "foreground": "#eee8d5",
             "powerline_symbol": "\ue0cc",
             "style": "diamond",
-            "template": " {{ if eq .Name \"pwsh\" }}\uebc7{{ end }}{{ if ne .Name \"pwsh\" }}\uf489{{ end }} {{ .Name }}{{ if eq .Name \"pwsh\" }} {{ .Version }}{{ end }} ",
+            "template": " {{ if eq .Name \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} {{ .Name }} {{ if eq .Name \"pwsh\" }}{{ .Version }} {{ end }}",
             "trailing_diamond": "\ue0c0",
             "type": "shell"
           }
