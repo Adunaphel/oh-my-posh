@@ -38,25 +38,43 @@
           "style": "plain",
           "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
-        },/*
+        },
         {
           "type": "battery",
-          "style": "powerline",
-          "powerline_symbol": "\ue0cc",
-          "foreground": "#193549",
-          "background": "#ffeb3b",
-          "background_templates": [
-            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-          ],
-          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}\uF295 ",
+          "style": "plain",
+          "foreground": "#ffeb3b",
+          "templates_logic": "first_match",
+          "templates": [
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 15 }}\uf585 {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 25 }}\uf586 {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 35 }}\uf587 {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 55 }}\uf588 {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 75 }}\uf589 {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 85 }}\uf58a {{ end }}{{ end }}",
+            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 101 }}\uf584 {{ end }}{{ end }}",
+            "{{ if lt .Percentage 15 }}\uf579 {{ end }}",
+            "{{ if lt .Percentage 25 }}\uf57a {{ end }}",
+            "{{ if lt .Percentage 35 }}\uf57b {{ end }}",
+            "{{ if lt .Percentage 45 }}\uf57c {{ end }}",
+            "{{ if lt .Percentage 55 }}\uf57d {{ end }}",
+            "{{ if lt .Percentage 65 }}\uf57e {{ end }}",
+            "{{ if lt .Percentage 75 }}\uf57f {{ end }}",
+            "{{ if lt .Percentage 75 }}\uf580 {{ end }}",
+            "{{ if lt .Percentage 85 }}\uf581 {{ end }}",
+            "{{ if lt .Percentage 101 }}\uf578 {{ end }}"
+          ]
+        },
+        {
+          "type": "battery",
+          "style": "plain",
+          "foreground": "#ffeb3b",
+          "template": "{{ .Percentage }}\uF295 ",
           "properties": {
-            "discharging_icon": "\ue231 ",
+            "discharging_icon": " ",
             "charging_icon": "\ue234 ",
-            "charged_icon": "\ue22f "
+            "charged_icon": "\uf578 "
           }
-        },*/
+        },
         {
           "template": "{{ if eq .Name \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} {{ .Name }} {{ if eq .Name \"pwsh\" }}{{ .Version }} {{ end }}",
           "foreground": "#268bd2",
