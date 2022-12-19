@@ -49,28 +49,6 @@
           "style": "powerline",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
-        },
-        {
-          "background": "#9ec3f0",
-          "foreground": "#000000",
-          "style": "powerline",
-          "powerline_symbol": "\ue0cc",
-          "properties": {
-            "source": "cli"
-          },
-          "template": " \ufd03cli {{ .Name }}",
-          "type": "az"
-        },
-        {
-          "background": "#9ec3f0",
-          "foreground": "#000000",
-          "style": "powerline",
-          "powerline_symbol": "\ue0cc",
-          "properties": {
-            "source": "pwsh"
-          },
-          "template": "\ufd03pwsh {{ .Name }} ",
-          "type": "az"
         },/*
         {
           "type": "battery",
@@ -106,6 +84,48 @@
       "alignment": "left",
       "newline": true,
       "segments": [
+        {
+          "background": "#9ec3f0",
+          "foreground": "#000000",
+          "style": "diamond",
+          "leading_diamond": "\ue0c2",
+          "type": "az",
+          "template": "\ufd03"
+        },
+        {
+          "background": "#9ec3f0",
+          "foreground": "#000000",
+          "style": "powerline",
+          "leading_diamond": "\ue0c2",
+          "trailing_diamond": "\ue0c0",
+          "powerline_symbol": "\ue0cc",
+          "properties": {
+            "source": "cli"
+          },
+          "template": "cli {{ .Name }}",
+          "type": "az"
+        },
+        {
+          "background": "#9ec3f0",
+          "foreground": "#000000",
+          "style": "powerline",
+          "leading_diamond": "\ue0c2",
+          "trailing_diamond": "\ue0c0",
+          "powerline_symbol": "\ue0cc",
+          "properties": {
+            "source": "pwsh"
+          },
+          "template": "pwsh {{ .Name }} ",
+          "type": "az"
+        },
+        {
+          "background": "#9ec3f0",
+          "foreground": "#000000",
+          "style": "diamond",
+          "trailing_diamond": "\ue0c0",
+          "type": "az",
+          "template": "\ufd03"
+        }
       ],
       "type": "prompt"
     },
