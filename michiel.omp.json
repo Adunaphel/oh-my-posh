@@ -1,17 +1,35 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "Base03": "#002b36",
+    "Base02": "#073642",
+    "Base01": "#586e75",
+    "Base00": "#657b83",
+    "Base0": "#839496",
+    "Base1": "#93a1a1",
+    "Base2": "#eee8d5",
+    "Base3": "#fdf6e3",
+    "Yellow": "#b58900",
+    "Orange": "#cb4b16",
+    "Red": "#dc322f",
+    "Magenta": "#d33682",
+    "Violet": "#6c71c4",
+    "Blue": "#268bd2",
+    "Cyan": "#2aa198",
+    "Green": "#859900"
+  },
   "blocks": [
     {
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#6c71c4",
+          "foreground": "p:Violet",
           "style": "plain",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "type": "os"
         },
         {
-          "foreground": "#6c71c4",
+          "foreground": "p:Violet",
           "style": "plain",
           "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ if .Root }}<#d33682>{{ end }}{{ .UserName }}{{ if .Root }}</>{{ end }}@{{ .HostName }} ",
           "type": "session"
@@ -23,7 +41,7 @@
             "style": "full",
             "home_icon": "\uf7db"
           },
-          "foreground": "#d33682",
+          "foreground": "p:Magenta",
           "style": "plain",
           "template": "\uf07b {{ .Path }} ",
           "type": "path"
@@ -34,7 +52,7 @@
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "foreground": "#b58900",
+          "foreground": "p:Yellow",
           "style": "plain",
           "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
@@ -42,7 +60,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#859900",
+          "foreground": "p:Green",
           "templates_logic": "first_match",
           "templates": [
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 15 }}\uf585 {{ end }}{{ end }}",
@@ -67,7 +85,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#859900",
+          "foreground": "p:Green",
           "template": "{{ .Percentage }}\uF295 ",
           "properties": {
             "discharging_icon": " ",
@@ -89,13 +107,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#2aa198",
+          "foreground": "p:Blue",
           "style": "plain",
           "type": "az",
           "template": " \ufd03 "
         },
         {
-          "foreground": "#2aa198",
+          "foreground": "p:Cyan",
           "style": "plain",
           "properties": {
             "source": "cli"
@@ -104,7 +122,7 @@
           "type": "az"
         },
         {
-          "foreground": "#2aa198",
+          "foreground": "p:Cyan",
           "style": "plain",
           "properties": {
             "source": "pwsh"
@@ -113,7 +131,7 @@
           "type": "az"
         },
         {
-          "foreground": "#2aa198",
+          "foreground": "p:Cyan",
           "style": "plain",
           "type": "az",
           "template": "\ufd03"
@@ -126,7 +144,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#cb4b16",
+          "foreground": "p:Base1",
           "style": "plain",
           "template": " \uf1d0 >",
           "type": "text"
@@ -137,12 +155,12 @@
   ],
   "secondary_prompt": {
     "background": "transparent",
-    "foreground": "#cb4b16",
+    "foreground": "p:Base1",
     "template": "   > "
   },
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#cb4b16",
+    "foreground": "p:Base1",
     "template": " {{ if eq .Shell \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} > "
   },
   "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
