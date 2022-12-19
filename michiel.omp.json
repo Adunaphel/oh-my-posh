@@ -31,7 +31,7 @@
         {
           "foreground": "p:Violet",
           "style": "plain",
-          "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ if .Root }}<#d33682>{{ end }}{{ .UserName }}{{ if .Root }}</>{{ end }}@{{ .HostName }} ",
+          "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ if .Root }}<p:Red>{{ end }}{{ .UserName }}{{ if .Root }}</>{{ end }}@{{ .HostName }} ",
           "type": "session"
         },
         {
@@ -70,12 +70,12 @@
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 75 }}\uf589 {{ end }}{{ end }}",
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 85 }}\uf58a {{ end }}{{ end }}",
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 101 }}\uf584 {{ end }}{{ end }}",
-            "{{ if lt .Percentage 15 }}\uf579 {{ end }}",
-            "{{ if lt .Percentage 25 }}\uf57a {{ end }}",
-            "{{ if lt .Percentage 35 }}\uf57b {{ end }}",
-            "{{ if lt .Percentage 45 }}\uf57c {{ end }}",
-            "{{ if lt .Percentage 55 }}\uf57d {{ end }}",
-            "{{ if lt .Percentage 65 }}\uf57e {{ end }}",
+            "{{ if lt .Percentage 15 }}<p:Red>\uf579</> {{ end }}",
+            "{{ if lt .Percentage 25 }}<p:Orange>\uf57a</> {{ end }}",
+            "{{ if lt .Percentage 35 }}<p:Orange>\uf57b</> {{ end }}",
+            "{{ if lt .Percentage 45 }}<p:Yellow>\uf57c</> {{ end }}",
+            "{{ if lt .Percentage 55 }}<p:Yellow>\uf57d</> {{ end }}",
+            "{{ if lt .Percentage 65 }}<p:Yellow>\uf57e</> {{ end }}",
             "{{ if lt .Percentage 75 }}\uf57f {{ end }}",
             "{{ if lt .Percentage 75 }}\uf580 {{ end }}",
             "{{ if lt .Percentage 85 }}\uf581 {{ end }}",
@@ -154,12 +154,10 @@
     }
   ],
   "secondary_prompt": {
-    "background": "transparent",
     "foreground": "p:Base1",
     "template": "   > "
   },
   "transient_prompt": {
-    "background": "transparent",
     "foreground": "p:Base1",
     "template": " {{ if eq .Shell \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} > "
   },
