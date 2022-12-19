@@ -42,7 +42,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#ffeb3b",
+          "foreground": "#859900",
           "templates_logic": "first_match",
           "templates": [
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 15 }}\uf585 {{ end }}{{ end }}",
@@ -67,7 +67,7 @@
         {
           "type": "battery",
           "style": "plain",
-          "foreground": "#ffeb3b",
+          "foreground": "#859900",
           "template": "{{ .Percentage }}\uF295 ",
           "properties": {
             "discharging_icon": " ",
