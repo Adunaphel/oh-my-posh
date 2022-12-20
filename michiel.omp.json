@@ -96,6 +96,12 @@
           }
         },
         {
+          "type": "dotnet",
+          "style": "plain",
+          "foreground": "p:Orange",
+          "template": "\ue70c {{ .Full }} "
+        },
+        {
           "template": "{{ if eq .Name \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} {{ .Name }} {{ if eq .Name \"pwsh\" }}{{ .Version }} {{ end }}",
           "foreground": "p:Blue",
           "style": "plain",
