@@ -50,7 +50,8 @@
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
-            "fetch_upstream_icon": true
+            "fetch_upstream_icon": true,
+            "azure_devops_icon": "\uebe8 "
           },
           "foreground": "p:Yellow",
           "style": "plain",
@@ -70,7 +71,7 @@
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 85 }}\uf589 {{ end }}{{ end }}", // 80%
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 95 }}\uf58a {{ end }}{{ end }}", // 90%
             "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 101 }}\uf584 {{ end }}{{ end }}", // 100%
-            "{{ if lt .Percentage 5 }}<p:Red>\uf582</> {{ end }}", // empty
+            "{{ if lt .Percentage 5 }}<f><p:Red>\uf582</><f> {{ end }}", // empty
             "{{ if lt .Percentage 15 }}<p:Red>\uf579</> {{ end }}", // 10%
             "{{ if lt .Percentage 25 }}<p:Orange>\uf57a</> {{ end }}", // 20%
             "{{ if lt .Percentage 35 }}<p:Orange>\uf57b</> {{ end }}", // 30%
