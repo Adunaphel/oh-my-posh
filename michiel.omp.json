@@ -144,6 +144,13 @@
       "newline": true,
       "segments": [
         {
+          "type": "iterm",
+          "interactive": true,
+          "style": "plain",
+          "foreground": "#80ffea",
+          "template": "{{ .PromptMark }}"
+        },
+        {
           "foreground": "p:Base1",
           "style": "plain",
           "template": " \uf1d0 >",
