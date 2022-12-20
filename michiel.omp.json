@@ -164,6 +164,14 @@
     "foreground": "p:Base1",
     "template": " {{ if eq .Shell \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} > "
   },
+  "valid_line": {
+    "foreground": "p:Base1",
+      "template": " \uebe5 "
+  },
+  "error_line": {
+    "foreground": "p:Red",
+      "template": " \uebe6 "
+  },
   "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
   "final_space": true,
   "version": 2
