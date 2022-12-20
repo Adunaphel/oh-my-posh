@@ -95,7 +95,7 @@
         },
         {
           "template": "{{ if eq .Name \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} {{ .Name }} {{ if eq .Name \"pwsh\" }}{{ .Version }} {{ end }}",
-          "foreground": "#268bd2",
+          "foreground": "p:Blue",
           "style": "plain",
           "type": "shell"
         }
@@ -107,7 +107,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "p:Blue",
+          "foreground": "p:Cyan",
           "style": "plain",
           "type": "az",
           "template": " \ufd03 "
@@ -147,7 +147,7 @@
           "type": "iterm",
           "interactive": true,
           "style": "plain",
-          "foreground": "#80ffea",
+          "foreground": "p:Base2",
           "template": "{{ .PromptMark }}"
         },
         {
