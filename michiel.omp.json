@@ -114,7 +114,7 @@
           "properties": {
             "source": "cli"
           },
-          "template": " \ufd03 cli {{ .Name }}",
+          "template": " \uebd8 cli {{ .Name }}",
           "type": "az"
         },
         {
@@ -123,7 +123,7 @@
           "properties": {
             "source": "pwsh"
           },
-          "template": " \ufd03 pwsh {{ .Name }}",
+          "template": " \uebd8 pwsh {{ .Name }}",
           "type": "az"
         }
       ],
