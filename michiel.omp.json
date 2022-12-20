@@ -109,16 +109,10 @@
         {
           "foreground": "p:Cyan",
           "style": "plain",
-          "type": "az",
-          "template": " \ufd03 "
-        },
-        {
-          "foreground": "p:Cyan",
-          "style": "plain",
           "properties": {
             "source": "cli"
           },
-          "template": "cli {{ .Name }} ",
+          "template": " \ufd03 cli {{ .Name }}",
           "type": "az"
         },
         {
@@ -127,14 +121,8 @@
           "properties": {
             "source": "pwsh"
           },
-          "template": "pwsh {{ .Name }} ",
+          "template": " \ufd03 pwsh {{ .Name }}",
           "type": "az"
-        },
-        {
-          "foreground": "p:Cyan",
-          "style": "plain",
-          "type": "az",
-          "template": "\ufd03"
         }
       ],
       "type": "prompt"
