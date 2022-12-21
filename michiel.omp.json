@@ -166,11 +166,11 @@
   },
   "valid_line": {
     "foreground": "p:Base1",
-      "template": " \uebe5 "
+      "template": " \uf1d0 > "
   },
   "error_line": {
     "foreground": "p:Red",
-      "template": " \uebe6 "
+      "template": " \uf1d1 > "
   },
   "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
   "final_space": true,
