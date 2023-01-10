@@ -25,8 +25,15 @@
         {
           "foreground": "p:Violet",
           "style": "plain",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "type": "os"
+          "template": " {{.Icon}}{{ if .WSL }} \uf31a\uf17a{{ end }} ",
+          "type": "os",
+          "properties": {
+            "windows": "\uf17a",
+            "macos": "\uf179",
+            "linux": "\uf31a",
+            "ubuntu": "\uf31b",
+            "display_distro_name": false
+          }
         },
         {
           "foreground": "p:Violet",
@@ -166,11 +173,11 @@
   },
   "valid_line": {
     "foreground": "p:Base1",
-      "template": " \uf1d0 > "
+    "template": " \uf1d0 > "
   },
   "error_line": {
     "foreground": "p:Red",
-      "template": " \uf1d1 > "
+    "template": " \uf1d1 > "
   },
   "console_title_template": "{{ .Shell }} {{ .UserName }}@{{ .HostName }}:{{ .Folder }}",
   "final_space": true,
