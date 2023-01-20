@@ -71,13 +71,13 @@
           "foreground": "p:Green",
           "templates_logic": "first_match",
           "templates": [
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 25 }}\uf585 {{ end }}{{ end }}", // 20%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 35 }}\uf586 {{ end }}{{ end }}", // 30%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 45 }}\uf587 {{ end }}{{ end }}", // 40%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 65 }}\uf588 {{ end }}{{ end }}", // 60%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 85 }}\uf589 {{ end }}{{ end }}", // 80%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 95 }}\uf58a {{ end }}{{ end }}", // 90%
-            "{{ if eq \"Charging\" .State.String }}{{ if lt .Percentage 101 }}\uf584 {{ end }}{{ end }}", // 100%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 25) }}\uf585 {{ end }}", // 20%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 35) }}\uf586 {{ end }}", // 30%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 45) }}\uf587 {{ end }}", // 40%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 65) }}\uf588 {{ end }}", // 60%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 85) }}\uf589 {{ end }}", // 80%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 95) }}\uf58a {{ end }}", // 90%
+            "{{ if and (eq \"Charging\" .State.String) (lt .Percentage 101) }}\uf584 {{ end }}", // 100%
             "{{ if lt .Percentage 5 }}<f><p:Red>\uf582</><f> {{ end }}", // empty
             "{{ if lt .Percentage 15 }}<p:Red>\uf579</> {{ end }}", // 10%
             "{{ if lt .Percentage 25 }}<p:Orange>\uf57a</> {{ end }}", // 20%
@@ -166,10 +166,6 @@
   "secondary_prompt": {
     "foreground": "p:Base1",
     "template": "   > "
-  },
-  "transient_prompt": {
-    "foreground": "p:Base1",
-    "template": " {{ if eq .Shell \"pwsh\" }}\uebc7{{ else }}\uf489{{ end }} > "
   },
   "valid_line": {
     "foreground": "p:Base1",
