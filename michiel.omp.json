@@ -120,6 +120,7 @@
     {
       "alignment": "left",
       "newline": true,
+      "type": "prompt",
       "segments": [
         {
           "foreground": "p:Cyan",
@@ -127,7 +128,7 @@
           "properties": {
             "source": "cli"
           },
-          "template": " \uebd8 cli {{ .Name }}",
+          "template": "\ue0b6<p:Base03,p:Cyan>\uebd8cli</>\ue0b4 {{ .Name }} ",
           "type": "az"
         },
         {
@@ -136,11 +137,10 @@
           "properties": {
             "source": "pwsh"
           },
-          "template": " \uebd8 pwsh {{ .Name }}",
+          "template": "\ue0b6<p:Base03,p:Cyan>\uebd8pwsh</>\ue0b4 {{ .Name }} ",
           "type": "az"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
       "alignment": "left",
